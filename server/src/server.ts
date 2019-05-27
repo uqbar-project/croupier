@@ -15,7 +15,6 @@ const app = express()
 
 app.use(cors())
 app.use(mongo(MONGO_CONNECTION_STRING, `croupier-${NODE_ENV}`))
-
 app.use('/api', routes)
 
 if (NODE_ENV === 'production')

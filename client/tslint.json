@@ -3,5 +3,7 @@
     "../tslint.json",
     "tslint-react"
   ],
-  "rules": {}
+  "rules": {
+    "jsx-boolean-value": false
+  }
 }
