@@ -17,7 +17,9 @@ app.use(cors())
 app.use(mongo(MONGO_CONNECTION_STRING, `croupier-${NODE_ENV}`))
 app.use('/api', routes)
 
-if (NODE_ENV === 'production')
+if (NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '..', '..', '..', '..', 'build')))
+  app.get('*', (_req, res) => res.sendFile(path.join(__dirname + '..', '..', '..', '..', '..', 'build', 'index.html')))
+}
 
 app.listen(PORT, () => log(`Server started in ${NODE_ENV} mode at http://localhost:${PORT}`))
