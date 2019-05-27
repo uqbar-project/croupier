@@ -5,7 +5,8 @@ const router = AsyncRouter()
 
 router.get('/ping', async () => 'OK')
 
-const points: Point[] = [{ text: 'foo', tags: [] }, { text: 'bar', tags: [] }]
-router.get('/points', async () => points)
+router.get('/points', async ({ db }) => {
+  return db.collection<Point>('points').find().toArray()
+})
 
 export default router

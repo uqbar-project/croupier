@@ -46,7 +46,9 @@
     "variable-name": [
       true,
       "check-format",
-      "allow-pascal-case"
+      "ban-keywords",
+      "allow-pascal-case",
+      "allow-leading-underscore"
     ],
     "curly": false,
     "member-access": false,

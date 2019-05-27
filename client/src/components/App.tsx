@@ -9,7 +9,7 @@ export default () => {
 
   const [points, setPoints] = useState<Point[]>([])
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_URL || ''}/api/points`)
+    fetch(`${process.env.REACT_APP_SERVER_URL}/api/points`)
       .then(response => response.json())
       .then(response => setPoints(response))
       .catch(log)

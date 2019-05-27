@@ -8,9 +8,11 @@
   },
   "dependencies": {
     "@types/cors": "^2.8.5",
+    "@types/mongodb": "^3.1.27",
     "cors": "^2.8.5",
     "express": "^4.17.0",
     "express-async-router": "^0.1.15",
+    "mongodb": "^3.2.6",
     "typescript": "^3.4.5"
   },
   "devDependencies": {

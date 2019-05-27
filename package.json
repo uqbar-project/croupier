@@ -14,9 +14,9 @@
     "test:server": "npm test --prefix server/",
     "start": "npm run start:${NODE_ENV:=development}",
     "start:production": "cd ./server && node ./build/server/src/server.js",
-    "start:development": "npm-run-all --parallel start:server start:client",
-    "start:client": "FORCE_COLOR=true npm start --prefix client/ | cat",
-    "start:server": "npm start --prefix server/",
+    "start:development": "npm-run-all --parallel start:development:client start:development:server",
+    "start:development:client": "REACT_APP_SERVER_URL=http://localhost:8080 FORCE_COLOR=true npm start --prefix client/ | cat",
+    "start:development:server": "npm start --prefix server/",
     "build": "npm-run-all --parallel build:client build:server",
     "build:client": "npm run build --prefix client/ && rm -rf ./build && mv ./client/build ./build",
     "build:server": "npm run build --prefix server/"
